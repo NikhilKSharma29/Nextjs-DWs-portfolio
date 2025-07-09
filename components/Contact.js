@@ -70,6 +70,9 @@ const Contact = () => {
       if (result.success) {
         setSubmitStatus({ type: 'success', message: 'Message sent successfully!' });
         setFormData({ name: '', lastName: '', email: '', message: '' });
+        setTimeout(() => {
+            setSubmitStatus({ type: '', message: '' });
+          }, 5000);
       } else {
         setSubmitStatus({ type: 'error', message: result.message || 'Something went wrong' });
       }
@@ -98,7 +101,7 @@ const Contact = () => {
           {submitStatus.message}
         </div>
       )}
-
+      
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 

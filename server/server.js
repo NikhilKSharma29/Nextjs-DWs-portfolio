@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Create data directory if it doesn't exist
-const dataDir = path.join(__dirname, 'data');
+const dataDir = path.join(__dirname, 'postman');
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir);
 }
@@ -47,7 +47,7 @@ app.post('/api/contact', (req, res) => {
     console.log('New contact:', contact);
     
     // Save to file
-    const filePath = path.join(dataDir, 'contacts.json');
+    const filePath = path.join(dataDir, 'portfolio_collection.json');
     let contacts = [];
     
     if (fs.existsSync(filePath)) {
