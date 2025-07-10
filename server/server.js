@@ -4,10 +4,17 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = 5000;
+// Load environment variables
+require('dotenv').config({ path: '../.env.local' });
+const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// Configure CORS with allowed origins
+app.use(cors({
+  origin: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Create data directory if it doesn't exist
