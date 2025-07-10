@@ -213,7 +213,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-4 dark:text-white">Contact Information</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Feel free to get in touch with me. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                Feel free to get in touch with me. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
             </div>
             

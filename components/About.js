@@ -22,7 +22,7 @@ const About = () => {
         <div className="flex flex-col items-center justify-center about-content">
           {/* Heading */}
           <h1 className="text-[6.5vw] text-center tracking-[5px] font-extralight hello-text text-black dark:text-white">
-            Hello! I'm Nikhil*
+            Hello! I&apos;m Nikhil*
           </h1>
 
           {/* About Text & Title */}
