@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nikhil's Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, featuring dark/light mode and smooth animations.
 
-First, run the development server:
+## 🚀 Features
+
+- ⚡️ Built with Next.js 14
+- 🎨 Dark/Light mode with system preference
+- ✨ Smooth animations with Framer Motion and GSAP
+- 🎨 Styled with Tailwind CSS
+- 📱 Fully responsive design
+- 🚀 Optimized for performance
+
+## 🛠️ Prerequisites
+
+- Node.js 18.0.0 or later
+- npm or yarn
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/NikhilKSharma29/Nextjs-DWs-portfolio.git
+   cd Nextjs-DWs-portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables**
+   - Copy `.env.example` to `.env.local`
+   - Update the environment variables as needed
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open [http://localhost:3000](http://localhost:3000)** with your browser to see the result.
+
+## 🏗 Build for Production
 
 ```bash
-npm run dev
+npm run build
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Deploy on Vercel
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FNikhilKSharma29%2FNextjs-DWs-portfolio&project-name=my-portfolio&repository-name=my-portfolio)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push your code to a GitHub repository
+2. Import your project on Vercel
+3. Vercel will detect it's a Next.js app and set up the right settings
+4. Your app will be deployed!
 
-## Learn More
+### Manual Deployment
 
-To learn more about Next.js, take a look at the following resources:
+1. Install the Vercel CLI:
+   ```bash
+   npm install -g vercel
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Deploy:
+   ```bash
+   vercel
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Environment Variables
 
-## Deploy on Vercel
+Copy `vercel-env.example` to `.env.local` and update the values:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-vercel-app-url.vercel.app
+# Add other environment variables as needed
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Built With
+
+- [Next.js](https://nextjs.org/) - The React Framework
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [GSAP](https://greensock.com/gsap/) - JavaScript animation library
+- [React Icons](https://react-icons.github.io/react-icons/) - Popular icons for React
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Vercel Deployment Guide](https://vercel.com/docs)

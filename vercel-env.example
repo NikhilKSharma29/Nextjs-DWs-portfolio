@@ -1,0 +1,19 @@
+# Environment Variables Example
+# Copy this file to .env.local and fill in the values
+
+# Next.js Environment
+NEXT_PUBLIC_SITE_URL=https://your-vercel-app-url.vercel.app
+
+# Analytics (if any)
+# NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+
+# Contact Form (if applicable)
+# NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+# NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+# NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+
+# API Keys (if any)
+# NEXT_PUBLIC_API_KEY=your_api_key
+
+# Set to 'true' in production
+NODE_ENV=production
