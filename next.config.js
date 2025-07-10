@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Target must be set to serverless for Netlify
+  target: 'serverless',
   reactStrictMode: true,
+  // Enable static exports for Netlify
+  output: 'export',
+  // Add base path if your site is served from a subdirectory
+  // basePath: '/portfolio',
+  // Add trailing slash for Netlify compatibility
+  trailingSlash: true,
   images: {
     domains: ['avatars.githubusercontent.com'], // Add any other domains you use for images
     formats: ['image/avif', 'image/webp'],

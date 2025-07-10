@@ -36,6 +36,30 @@ yarn-error.log*
 # vercel
 .vercel
 
+# netlify
+.netlify
+.netlify/*
+!.netlify/state.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# netlify caches
+.cache/
+.netlify/cache/
+
+# netlify functions
+.netlify/functions/
+
+# netlify build
+.netlify/build/
+
+# netlify plugins
+.netlify/plugins/
+
+# netlify redirects
+.netlify/redirects/
+
+# netlify headers
+.netlify/headers/
