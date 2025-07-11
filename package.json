@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
-    "netlify-build": "npm run build",
-    "preview": "next build && next start"
+    "preview": "next build && next start",
+    "netlify-build": "next build && next export"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

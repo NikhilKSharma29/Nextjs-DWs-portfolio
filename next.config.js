@@ -1,34 +1,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Target must be set to serverless for Netlify
-  target: 'serverless',
   reactStrictMode: true,
-  // Enable static exports for Netlify
+  // Enable static exports
   output: 'export',
   // Add base path if your site is served from a subdirectory
   // basePath: '/portfolio',
-  // Add trailing slash for Netlify compatibility
+  // Add trailing slash for better compatibility
   trailingSlash: true,
+  
+  // Image optimization settings
   images: {
-    domains: ['avatars.githubusercontent.com'], // Add any other domains you use for images
+    domains: ['avatars.githubusercontent.com'],
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true, // Required for static export
   },
-  // Enable static exports for SSG (if you're using static site generation)
-  output: 'standalone',
+  
   // Enable React DevTools in production
   reactProductionProfiling: true,
+  
   // Enable source maps in production (optional)
   productionBrowserSourceMaps: false,
-  // Configure webpack (optional)
+  
+  // Configure webpack
   webpack: (config, { isServer }) => {
     // Add any custom webpack configurations here
     return config;
   },
-  // Environment variables that should be available at build time
-  env: {
-    // Add any environment variables that should be available at build time
-  },
-  // Configure headers (optional)
+  
+  // Configure headers
   async headers() {
     return [
       {

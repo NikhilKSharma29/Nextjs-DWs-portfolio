@@ -1,22 +1,26 @@
 "use client";
 import React from "react";
+import { ThemeProvider } from "@/context/ThemeContext";
 
-import { Navbar } from "@/components/Navbar";
-import Home from "@/components/Home";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import { Navbar } from "@/components/layouts/Navbar";
+import Home from "@/components/layouts/Home";
+import About from "@/components/layouts/About";
+import Experience from "@/components/layouts/Experience";
+import Contact from "@/components/form/Contact";
+import Footer from "@/components/layouts/Footer";
+
 const page = () => {
   return (
-    <div>
-      <Navbar />
-      <Home />
-      <About />
-      <Experience />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div>
+        <Navbar />
+        <Home />
+        <About />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 

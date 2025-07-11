@@ -5,7 +5,7 @@ import React from "react";
 import dynamic from 'next/dynamic';
 
 // Dynamically import ThemeToggle to avoid SSR issues with theme
-const ThemeToggle = dynamic(() => import('./ThemeToggle'), { ssr: false });
+const ThemeToggle = dynamic(() => import('../common/ThemeToggle'), { ssr: false });
 
 export const Navbar = () => {
   return (
