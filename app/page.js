@@ -16,7 +16,7 @@ const page = () => {
         <Navbar />
         <Home />
         <About />
-        <Experience />
+        {/* <Experience /> */}
         <Contact />
         <Footer />
       </div>

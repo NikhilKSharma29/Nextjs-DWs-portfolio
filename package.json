@@ -14,6 +14,8 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "cors": "^2.8.5",
+    "cssnano": "^7.0.7",
+    "cssnano-preset-default": "^7.0.7",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "framer-motion": "^12.23.2",
