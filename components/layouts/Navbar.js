@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 // Dynamically import ThemeToggle to avoid SSR issues with theme
 const ThemeToggle = dynamic(() => import("../common/ThemeToggle"), {
@@ -13,115 +13,115 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
     <>
-      <nav className="fixed top-0 w-full bg-transparent dark:bg-gray-900/80 backdrop-blur-sm text-white z-10">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-[5vw] py-4">
-            {/* Logo / Name */}
-            {/* <h5 className="text-lg font-semibold dark:text-white">Nikhil</h5> */}
+      <nav className="fixed top-0 w-full z-50 bg-white/30 dark:bg-black/30 border-b border-white/10 dark:border-gray-800 shadow-sm transition-all duration-300">
+  <div className="max-w-7xl mx-auto px-5 sm:px-10">
+    <div className="flex justify-between items-center h-[70px]">
+      
+      {/* Logo */}
+      <Link to="/" className="text-xl font-bold tracking-wide text-black dark:text-white">
+        Nikhil<span className="text-blue-500">.</span>
+      </Link>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-gray-300 hover:text-white focus:outline-none"
-            >
-              <svg
-                className="h-6 w-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                {isOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M3 12h18M12 15h.01M12 9h.01" />
-                )}
-              </svg>
-            </button>
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex items-center gap-8">
+        {menuItems.map((item) => (
+          <Link
+            key={item.href}
+            to={item.href}
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all font-medium"
+          >
+            {item.label}
+          </Link>
+        ))}
 
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-6">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="nav-item hover:text-gray-300 dark:hover:text-gray-400 transition"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <ThemeToggle />
-              <Link
-                href="#contact"
-                className="nav-item lets-talk flex items-center gap-1 text-base font-medium hover:text-cyan-300 transition"
-              >
-                Let&apos;s talk
-              </Link>
-            </div>
-          </div>
-        </div>
+        <ThemeToggle />
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed inset-y-0 right-0 w-full lg:hidden transform transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        <Link
+          to="/contact"
+          className="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition"
         >
-          <div className="h-full flex flex-col bg-gray-900/80 dark:bg-gray-900/80 p-8">
-            <div className="flex justify-between items-center mb-8">
-              <h5 className="text-xl font-semibold text-white">Nikhil</h5>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-gray-300 hover:text-white"
-              >
-                <svg
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
+          Let’s Talk
+        </Link>
+      </div>
 
-            <div className="flex-1">
-              <nav className="space-y-4">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block text-base text-gray-300 hover:text-white transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+      {/* Mobile Toggle */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden p-2 text-gray-800 dark:text-white focus:outline-none"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+        >
+          {isOpen ? (
+            <path d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+    </div>
+  </div>
 
-            <div className="mt-auto flex flex-col space-y-4">
-              <ThemeToggle />
-              <Link
-                href="#contact"
-                className="block text-base text-gray-300 hover:text-cyan-300 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Let&apos;s talk
-              </Link>
-            </div>
-          </div>
-        </div>
+  {/* Mobile Menu Slide-In */}
+  <div
+    className={`lg:hidden fixed top-0 right-0 h-full w-3/4 max-w-xs bg-black/90 text-white z-50 transform transition-transform duration-300 ease-in-out ${
+      isOpen ? 'translate-x-0' : 'translate-x-full'
+    }`}
+  >
+    <div className="p-6 flex flex-col h-full">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-lg font-bold">Menu</h2>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="text-white hover:text-red-400"
+        >
+          <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Menu Items */}
+      <nav className="flex flex-col gap-4 flex-1">
+        {menuItems.map((item) => (
+          <Link
+            key={item.href}
+            to={item.href}
+            onClick={() => setIsOpen(false)}
+            className="text-base text-white hover:text-blue-400 transition"
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
+
+      {/* Bottom CTA */}
+      <div className="mt-auto pt-6 border-t border-white/10">
+        <ThemeToggle />
+        <Link
+          to="/contact"
+          onClick={() => setIsOpen(false)}
+          className="mt-4 inline-block w-full text-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+        >
+          Let’s Talk
+        </Link>
+      </div>
+    </div>
+  </div>
+</nav>
+
     </>
   );
 };

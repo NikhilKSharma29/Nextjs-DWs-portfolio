@@ -5,21 +5,22 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { Navbar } from "@/components/layouts/Navbar";
 import Home from "@/components/layouts/Home";
 import About from "@/components/layouts/About";
-import Experience from "@/components/layouts/Experience";
 import Footer from "@/components/layouts/Footer";
 import ReactHookForm from "@/components/form/rhf/rhf";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const page = () => {
   return (
     <ThemeProvider>
-      <div>
+      <Router>
         <Navbar />
-        <Home />
-        <About />
-        {/* <Experience /> */}
-        <ReactHookForm />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ReactHookForm />} />
+        </Routes>
         <Footer />
-      </div>
+      </Router>
     </ThemeProvider>
   );
 };
