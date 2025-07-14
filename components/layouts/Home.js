@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -47,21 +48,21 @@ const Home = () => {
     <div className="w-full min-h-[90vh] bg-white dark:bg-black relative text-black dark:text-white page1 transition-colors duration-300">
       <div className="w-full h-full relative z-[1] flex flex-col items-center justify-center page1-content">
         {/* Big Heading */}
-        <h1 className="Nikhil overflow-y-hidden text-[25vw] relative text-left tracking-[5px] text-black dark:text-white">
+        <h1 className="Nikhil overflow-y-hidden text-[25vw] sm:text-[25vw] md:text-[25vw] relative text-left tracking-[5px] text-black dark:text-white">
           Nikhil
         </h1>
 
         {/* Footer Text + Icon */}
         <div className="flex items-center justify-between absolute bottom-0 w-full px-[3vw] py-[2vw] footer-content">
           {/* Roles Text */}
-          <div className="flex gap-[2vw] items-center footer-content-text">
-            <h4 className="max-w-[16vw] font-light cursor-pointer hover:opacity-80 transition-opacity">
+          <div className="flex gap-[2vw] items-center footer-content-text flex-wrap sm:gap-[1vw] sm:mt-[10vh] ">
+            <h4 className="max-w-[16vw] sm:max-w-[20vw] md:max-w-[16vw] font-light cursor-pointer hover:opacity-80 transition-opacity text-sm sm:text-base">
               Web Developer
             </h4>
-            <h4 className="max-w-[16vw] font-light cursor-pointer hover:opacity-80 transition-opacity">
+            <h4 className="max-w-[16vw] sm:max-w-[20vw] md:max-w-[16vw] font-light cursor-pointer hover:opacity-80 transition-opacity text-sm sm:text-base">
               Ui/UX Designer
             </h4>
-            <h4 className="max-w-[16vw] font-light cursor-pointer hover:opacity-80 transition-opacity">
+            <h4 className="max-w-[16vw] sm:max-w-[20vw] md:max-w-[16vw] font-light cursor-pointer hover:opacity-80 transition-opacity text-sm sm:text-base">
               Web Animator
             </h4>
           </div>

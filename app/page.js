@@ -6,8 +6,8 @@ import { Navbar } from "@/components/layouts/Navbar";
 import Home from "@/components/layouts/Home";
 import About from "@/components/layouts/About";
 import Experience from "@/components/layouts/Experience";
-import Contact from "@/components/form/Contact";
 import Footer from "@/components/layouts/Footer";
+import ReactHookForm from "@/components/form/rhf/rhf";
 
 const page = () => {
   return (
@@ -17,7 +17,7 @@ const page = () => {
         <Home />
         <About />
         {/* <Experience /> */}
-        <Contact />
+        <ReactHookForm />
         <Footer />
       </div>
     </ThemeProvider>
