@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 // Dynamically import ThemeToggle to avoid SSR issues with theme
 const ThemeToggle = dynamic(() => import("../common/ThemeToggle"), {
@@ -14,8 +14,8 @@ export const Navbar = () => {
 
   const menuItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "#about", label: "About" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -25,7 +25,7 @@ export const Navbar = () => {
     <div className="flex justify-between items-center h-[70px]">
       
       {/* Logo */}
-      <Link to="/" className="text-xl font-bold tracking-wide text-black dark:text-white">
+      <Link href="/" className="text-xl font-bold tracking-wide text-black dark:text-white">
         Nikhil<span className="text-blue-500">.</span>
       </Link>
 
@@ -34,7 +34,7 @@ export const Navbar = () => {
         {menuItems.map((item) => (
           <Link
             key={item.href}
-            to={item.href}
+            href={item.href}
             className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all font-medium"
           >
             {item.label}
@@ -44,7 +44,7 @@ export const Navbar = () => {
         <ThemeToggle />
 
         <Link
-          to="/contact"
+          href="#contact"
           className="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition"
         >
           Let’s Talk
@@ -98,7 +98,7 @@ export const Navbar = () => {
         {menuItems.map((item) => (
           <Link
             key={item.href}
-            to={item.href}
+            href={item.href}
             onClick={() => setIsOpen(false)}
             className="text-base text-white hover:text-blue-400 transition"
           >
@@ -111,7 +111,7 @@ export const Navbar = () => {
       <div className="mt-auto pt-6 border-t border-white/10">
         <ThemeToggle />
         <Link
-          to="/contact"
+          href="#contact"
           onClick={() => setIsOpen(false)}
           className="mt-4 inline-block w-full text-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
         >
