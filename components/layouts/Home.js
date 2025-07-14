@@ -19,31 +19,7 @@ const Home = () => {
     );
   }, [theme]);
 
-  useGSAP(() => {
-    const breaktext = () => {
-      var text = document.querySelector(".Nikhil");
-      var rejouice = text.textContent;
-
-      var splitrejouice = rejouice.split("");
-
-      var clutter = "";
-
-      splitrejouice.forEach(function (elem) {
-        clutter = clutter + "<span>" + elem + "</span>";
-      });
-
-      text.innerHTML = clutter;
-    };
-    breaktext();
-
-    gsap.from(".Nikhil", {
-        y: -100,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        stagger: 1,
-    });
-  });
+ 
   return (
     <div className="w-full min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 flex flex-col justify-between relative overflow-hidden z-[-1]">
 
