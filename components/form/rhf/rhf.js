@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "../rhf/ContactSchema";
 import { FiSend } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 const ReactHookForm = () => {
   const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
@@ -33,25 +34,17 @@ const ReactHookForm = () => {
       const result = await res.json();
 
       if (result.success) {
-        setSubmitStatus({
-          type: "success",
-          message: "Message sent successfully!",
-        });
-        reset(); // clear form
+        toast.success("Message sent successfully!");
+        reset();
       } else {
-        setSubmitStatus({
-          type: "error",
-          message: result.message || "Something went wrong",
-        });
+        toast.error(
+          result.message || "Something went wrong. Please try again."
+        );
       }
     } catch (error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Failed to send message. Please try again.",
-      });
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus({ type: "", message: "" }), 5000);
     }
   };
 

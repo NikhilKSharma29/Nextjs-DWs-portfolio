@@ -7,20 +7,18 @@ import Home from "@/components/layouts/Home";
 import About from "@/components/layouts/About";
 import Footer from "@/components/layouts/Footer";
 import ReactHookForm from "@/components/form/rhf/rhf";
+import { Toaster } from "react-hot-toast";
 
 const page = () => {
   return (
     <ThemeProvider>
-     
-        <Navbar />
-       
-         
-        
-        <Home/>
-        <About/>
-        <ReactHookForm/>
-        <Footer />
-    
+      <Navbar />
+
+      <Toaster position="top-center" reverseOrder={false} />
+      <Home />
+      <About />
+      <ReactHookForm />
+      <Footer />
     </ThemeProvider>
   );
 };
