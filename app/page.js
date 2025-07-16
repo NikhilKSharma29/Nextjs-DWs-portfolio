@@ -15,9 +15,9 @@ const page = () => {
       <Navbar />
 
       <Toaster position="top-center" reverseOrder={false} />
-      <Home />
-      <About />
-      <ReactHookForm />
+      <Home id="home" />
+      <About id="about" />
+      <ReactHookForm id="contact" />
       <Footer />
     </ThemeProvider>
   );

@@ -1,0 +1,39 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Nikhil",
+      "lastName": "Sharma",
+      "email": "nikhil@example.com",
+      "message": "Hey, this is a test!"
+    },
+    {
+      "id": "e33e",
+      "name": "Nikhil",
+      "lastName": "Sharma",
+      "email": "nikhil@example.com",
+      "message": "Great work!"
+    },
+    {
+      "id": "4363",
+      "name": "shruti",
+      "lastName": "Sharma",
+      "email": "nikhil@example.com",
+      "message": "Great work!"
+    },
+    {
+      "id": "b1e5",
+      "name": "shruti",
+      "lastName": "Sharma",
+      "email": "nikhil@example.com",
+      "message": "Great work!"
+    },
+    {
+      "id": "8e27",
+      "name": "Aman",
+      "lastName": "Sharma",
+      "email": "nikhil@example.com",
+      "message": "Great work!"
+    }
+  ]
+}

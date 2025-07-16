@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build: ..
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.docker
+    volumes:
+      - ..:/app
+    working_dir: /app
+    command: npm run dev
+    depends_on:
+      - mockapi
+
+  mockapi:
+    image: clue/json-server
+    ports:
+      - "4000:4000"
+    volumes:
+      - ../db:/data
+    command: json-server --watch /data/db.json --port 4000

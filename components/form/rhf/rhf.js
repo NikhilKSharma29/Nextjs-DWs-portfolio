@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "../rhf/ContactSchema";
 import { FiSend } from "react-icons/fi";
 import toast from "react-hot-toast";
+const API_BASE =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 const ReactHookForm = () => {
   const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
@@ -25,7 +27,7 @@ const ReactHookForm = () => {
     setSubmitStatus({ type: "", message: "" });
 
     try {
-      const res = await fetch(`http://localhost:5000/api/contact`, {
+      const res = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
